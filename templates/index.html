@@ -1,0 +1,30 @@
+{{define "Index"}}
+
+    {{template "_head"}}
+
+    <body>
+    <div class="container">
+        {{ range . }}
+            <h3>{{.Cidade}} - {{.Pesi}}</h3>
+            <table class="striped">
+                <thead>
+                <tr>
+                    <th>Candidato</th>
+                    <th>Votos</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{ range .Cand }}
+                    <tr>
+                        <td>{{ .Nm }}</td>
+                        <td>{{ .Pvap }}</td>
+                    </tr>
+                {{ end }}
+                </tbody>
+            </table>
+        {{ end }}
+    </div>
+    </body>
+
+    </html>
+{{end}}
